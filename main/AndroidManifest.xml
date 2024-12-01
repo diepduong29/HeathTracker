@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <!-- Quyền để nhận sự kiện khi thiết bị khởi động -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" /> <!-- Quyền để truy cập vào dữ liệu bước chân -->
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" /> <!-- Quyền để chạy dịch vụ nền -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/medical_check"
+        android:label="Heath Tracker"
+        android:roundIcon="@drawable/medical_check"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.HeathTracker"
+        tools:targetApi="31">
+        <activity
+            android:name=".step.StepHistoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".step.ChartStepActivity"
+            android:exported="false" />
+        <activity
+            android:name=".bmi.BMIHistoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".bmi.ChartBmiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".water.ChartWaterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".water.RemindWaterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".water.WaterHistoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".bmi.BMIActivity"
+            android:exported="false" />
+        <activity
+            android:name=".step.StepActivity"
+            android:exported="false" />
+        <activity
+            android:name=".water.DrinkWaterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".main.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <receiver android:name=".AlarmBmi" />
+
+        <receiver android:name=".AlarmWater" />
+    </application>
+
+</manifest>

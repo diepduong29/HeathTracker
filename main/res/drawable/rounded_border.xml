@@ -1,0 +1,19 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Thiết lập bo tròn -->
+    <corners android:radius="16dp"/>
+
+    <!-- Thiết lập màu nền -->
+    <solid android:color="#FFFFFF"/>
+
+    <!-- Thiết lập viền -->
+    <stroke
+        android:width="2dp"
+        android:color="@color/black"/>
+
+    <!-- Padding bên trong nếu cần -->
+    <padding
+        android:left="8dp"
+        android:top="8dp"
+        android:right="8dp"
+        android:bottom="8dp"/>
+</shape>
